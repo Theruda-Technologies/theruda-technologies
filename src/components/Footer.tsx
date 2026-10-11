@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const FOOTER_LINKS = [
   { href: "#services", label: "Services" },
   { href: "#work", label: "Work" },
@@ -17,22 +19,17 @@ export default function Footer() {
         aria-hidden="true"
       />
       <div className="container flex flex-col gap-8 py-10 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-2.5">
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-[10px] text-sm font-bold text-white"
-            style={{ background: "var(--gradient-brand)" }}
-            aria-hidden="true"
-          >
-            T
-          </span>
-          <div>
-            <p className="m-0 font-[family-name:var(--font-display)] text-base font-700 text-[var(--color-text)]">
-              Theruda Technologies
-            </p>
-            <p className="m-0 text-sm text-[var(--color-text-secondary)]">
-              Software · Design · AI · Graphics
-            </p>
-          </div>
+        <div className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Theruda Technologies"
+            width={140}
+            height={140}
+            className="h-20 w-auto md:h-24"
+          />
+          <p className="m-0 text-sm text-[var(--color-text-secondary)]">
+            Software · Design · AI · Graphics
+          </p>
         </div>
 
         <nav aria-label="Footer">

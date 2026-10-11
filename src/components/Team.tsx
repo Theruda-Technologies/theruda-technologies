@@ -1,24 +1,29 @@
+import Image from "next/image";
+
 const LEADERSHIP = [
   {
-    name: "Alex Rivera",
+    name: "Heran Eshetu Elala",
     role: "CEO",
     title: "Chief Executive Officer",
     focus: "Sets the vision, partnerships, and growth strategy for Theruda.",
-    initials: "AR",
+    photo: "/team/heran-2.jpg",
+    objectPosition: "50% 18%",
   },
   {
-    name: "Jordan Lee",
+    name: "Bisrat Asaye Alemayehu",
     role: "CTO",
     title: "Chief Technology Officer",
-    focus: "Owns architecture, engineering excellence, and AI product direction.",
-    initials: "JL",
+    focus: "Owns architecture, engineering excellence, and product technology direction.",
+    photo: "/team/bisrat.jpg",
+    objectPosition: "50% 28%",
   },
   {
-    name: "Sam Okonkwo",
+    name: "Eyuel Eshetu Elala",
     role: "CIO",
     title: "Chief Information Officer",
     focus: "Leads systems, information strategy, and technology operations across Theruda.",
-    initials: "SO",
+    photo: "/team/eyuel.png",
+    objectPosition: "50% 22%",
   },
 ] as const;
 
@@ -49,15 +54,18 @@ export default function Team() {
         <ul className="mt-12 m-0 grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-3">
           {LEADERSHIP.map((leader) => (
             <li key={leader.role}>
-              <article className="glass-card flex h-full flex-col p-6 transition-[transform] duration-500 ease-[var(--ease-out)] hover:-translate-y-1">
-                <div
-                  className="mb-5 flex h-14 w-14 items-center justify-center rounded-full text-sm font-bold tracking-wide text-white shadow-[var(--glow-brand-sm)]"
-                  style={{ background: "var(--gradient-brand)" }}
-                  aria-hidden="true"
-                >
-                  {leader.initials}
+              <article className="glass-card flex h-full flex-col items-center px-6 pt-8 pb-6 text-center transition-[transform] duration-500 ease-[var(--ease-out)] hover:-translate-y-1">
+                <div className="relative h-28 w-28 overflow-hidden rounded-full bg-[var(--color-surface)] shadow-[var(--glow-brand-sm)] ring-2 ring-[var(--color-accent)]/30 md:h-32 md:w-32">
+                  <Image
+                    src={leader.photo}
+                    alt={leader.name}
+                    fill
+                    sizes="128px"
+                    className="object-cover"
+                    style={{ objectPosition: leader.objectPosition }}
+                  />
                 </div>
-                <p className="m-0 text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
+                <p className="mt-5 mb-0 text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-accent)]">
                   {leader.role}
                 </p>
                 <h3 className="mt-2 mb-0 font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-[var(--color-text)]">

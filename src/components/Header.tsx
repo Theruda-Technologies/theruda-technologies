@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { IconClose, IconMenu } from "./Icons";
 
@@ -36,26 +37,20 @@ export default function Header() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="container flex h-16 items-center justify-between md:h-[4.5rem]">
+      <div className="container flex h-20 items-center justify-between md:h-24">
         <a
           href="#top"
-          className="group flex items-center gap-2.5 no-underline"
+          className="group flex items-center no-underline"
           aria-label="Theruda Technologies home"
         >
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-[10px] text-sm font-bold text-white shadow-[var(--glow-brand-sm)]"
-            style={{ background: "var(--gradient-brand)" }}
-            aria-hidden="true"
-          >
-            T
-          </span>
-          <span className="font-[family-name:var(--font-display)] text-[1.05rem] font-bold tracking-tight text-[var(--color-text)]">
-            Theruda
-            <span className="font-medium text-[var(--color-text-secondary)]">
-              {" "}
-              Technologies
-            </span>
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Theruda Technologies"
+            width={160}
+            height={160}
+            priority
+            className="h-16 w-auto md:h-[4.5rem]"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
